@@ -3,9 +3,10 @@ import { Status } from "@/src/enums/Status.enum";
 interface AlertProps {
     message: string;
     status: Status;
+    visible?: boolean;
 }
 
-export default function Alert({ message, status }: AlertProps) {
+export default function Alert({ message, status, visible = true }: AlertProps) {
     const statusColorText = {
         [Status.success]: "text-green-700",
         [Status.error]: "text-red-500",
@@ -18,7 +19,7 @@ export default function Alert({ message, status }: AlertProps) {
         [Status.warning]: "bg-yellow-500/15 border-yellow-500 rounded-sm"
     }
     return (
-        <div className={`flex items-center gap-2 border p-2 ${statusColorBorder[status]}`}>
+        <div className={`flex items-center gap-2 border p-2 ${statusColorBorder[status]}`} style={{ display: visible ? "flex" : "none" }}>
             <h1 className={statusColorText[status]}>{message}</h1>
         </div>
     )
