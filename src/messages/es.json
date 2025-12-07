@@ -6,13 +6,17 @@
         "register": "Registrarse"
     },
     "form": {
-        "register": {
-            "title": "Registrarse",
+        "common": {
             "name": "Nombre",
             "email": "Email",
-            "password": "Contraseña",
-            "confirmPassword": "Confirmar contraseña",
-            "register": "Registrarse"
+            "password": "Contraseña"
+        },
+        "login": {
+            "title": "Iniciar sesión"
+        },
+        "register": {
+            "title": "Registrarse",
+            "confirmPassword": "Confirmar contraseña"
         },
         "alerts": {
             "success": "Exito",

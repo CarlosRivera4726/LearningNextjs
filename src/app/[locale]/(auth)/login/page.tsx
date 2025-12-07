@@ -1,6 +1,7 @@
 "use client"
 
 import Alert from "@/app/components/Alert/Alert";
+import Button from "@/app/components/Button/Button";
 import Form from "@/app/components/Form/Form";
 import Input from "@/app/components/Input/Input";
 import { Status } from "@/app/enums/Status.enum";
@@ -32,15 +33,15 @@ export default function LoginPage() {
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-2xl font-bold text-black">{t("login")}</h1>
+            <h1 className="text-2xl font-bold text-black dark:text-white">{t("login")}</h1>
             <div className="flex flex-col gap-4">
-                {errors.email && <Alert message="El campo correo es requerido" status={Status.error} />}
-                <Input register={register} name="email" type="email" label={t_form("register.email")} />
-                {errors.password && <Alert message="El campo contraseña es requerido" status={Status.error} />}
-                <Input register={register} name="password" type="password" label={t_form("register.password")} />
+                {errors.email && <Alert message={t_form("alerts.namerequired")} status={Status.error} />}
+                <Input register={register} name="email" type="email" label={t_form("common.email")} />
+                {errors.password && <Alert message={t_form("alerts.passwordrequired")} status={Status.error} />}
+                <Input register={register} name="password" type="password" label={t_form("common.password")} />
             </div>
 
-            <input type="submit" className="bg-blue-500 text-white p-2 rounded mt-auto" />
+            <Button fullWidth type="submit" color="primary" value={t_form("login.title")} />
         </Form>
     );
 }

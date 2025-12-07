@@ -6,13 +6,17 @@
         "register": "Register"
     },
     "form": {
-        "register": {
-            "title": "Register",
+        "common": {
             "name": "Name",
             "email": "Email",
-            "password": "Password",
-            "confirmPassword": "Confirm Password",
-            "register": "Register"
+            "password": "Password"
+        },
+        "login": {
+            "title": "Login"
+        },
+        "register": {
+            "title": "Register",
+            "confirmPassword": "Confirm Password"
         },
         "alerts": {
             "success": "Success",
