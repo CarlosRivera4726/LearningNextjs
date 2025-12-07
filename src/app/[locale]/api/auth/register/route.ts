@@ -1,4 +1,4 @@
-import { prisma } from "@/src/app/lib/prisma";
+import { prisma } from "@/src/app/[locale]/lib/prisma";
 import bcrypt from "bcrypt";
 
 export async function GET() {

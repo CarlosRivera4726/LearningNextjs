@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import Alert from "@/src/components/Alert/Alert";
 import Form from "@/src/components/Form/Form";
@@ -27,14 +28,21 @@ export default function RegisterPage() {
 
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        const response = await axios.post("/api/auth/register", data, {
-            headers: {
-                'Content-Type': 'application/json'
+        try {
+            const response = await axios.post("/api/auth/register", data, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            console.log(response.data)
+            if (response.data.status !== 201) {
+                setAlert({ message: response.data.message, status: Status.error })
+            } else {
+                setAlert({ message: response.data.message, status: Status.success })
             }
-        })
-        console.log(response.data)
-        if (response.data.status === 500) {
-            setAlert({ message: response.data.message, status: Status.error })
+        } catch (error: any) {
+            console.log(error)
+            setAlert({ message: error.response.data.message, status: Status.error })
         }
 
     }

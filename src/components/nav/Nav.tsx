@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LocaleSwitcher from "../Switcher/LocaleSwitcher";
 
 
 export default function Nav() {
@@ -12,6 +13,8 @@ export default function Nav() {
             <Link className={pathName === "/dashboard" ? "underline active" : ""} href="/dashboard">Dashboard</Link>
             <Link className={pathName === "/login" ? "underline active" : ""} href="/login">Login</Link>
             <Link className={pathName === "/register" ? "underline active" : ""} href="/register">Register</Link>
+            |
+            <LocaleSwitcher />
         </nav>
     )
 }
