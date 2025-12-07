@@ -4,6 +4,7 @@ import Alert from "@/app/components/Alert/Alert";
 import Form from "@/app/components/Form/Form";
 import Input from "@/app/components/Input/Input";
 import { Status } from "@/app/enums/Status.enum";
+import { useTranslations } from "next-intl";
 import { useForm, SubmitHandler } from "react-hook-form"
 
 
@@ -14,6 +15,7 @@ type Inputs = {
 
 
 export default function LoginPage() {
+    const t = useTranslations("common");
     const {
         register,
         handleSubmit,
@@ -29,7 +31,7 @@ export default function LoginPage() {
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-2xl font-bold text-black">Login</h1>
+            <h1 className="text-2xl font-bold text-black">{t("login")}</h1>
             <div className="flex flex-col gap-4">
                 {errors.email && <Alert message="El campo correo es requerido" status={Status.error} />}
                 <Input register={register} name="email" type="email" />

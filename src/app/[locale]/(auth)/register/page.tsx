@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
-import Alert from "@/src/components/Alert/Alert";
-import Form from "@/src/components/Form/Form";
-import Input from "@/src/components/Input/Input";
-import { Status } from "@/src/enums/Status.enum";
+import Alert from "@/app/components/Alert/Alert";
+import Form from "@/app/components/Form/Form";
+import Input from "@/app/components/Input/Input";
+import { Status } from "@/app/enums/Status.enum";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 // import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -18,6 +19,7 @@ type Inputs = {
 
 
 export default function RegisterPage() {
+    const t = useTranslations("common");
     const [alert, setAlert] = useState({ message: "", status: Status.success })
     const {
         register,
@@ -51,7 +53,7 @@ export default function RegisterPage() {
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-2xl font-bold text-black">Register</h1>
+            <h1 className="text-2xl font-bold text-black">{t("register")}</h1>
             {alert.message && <Alert message={alert.message} status={alert.status} />}
             <div className="flex flex-col gap-4">
                 {errors.name && <Alert message="El campo nombre es requerido" status={Status.error} />}
