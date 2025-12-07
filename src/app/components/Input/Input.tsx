@@ -6,9 +6,10 @@ interface InputProps {
     register: UseFormRegister<any>;
     name: string;
     type: string;
+    label: string;
 }
 
-export default function Input({ register, name, type }: InputProps) {
+export default function Input({ register, name, type, label }: InputProps) {
     return (
         <div className="relative">
             <input
@@ -24,7 +25,7 @@ export default function Input({ register, name, type }: InputProps) {
                                   peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2
                                   peer-focus:top-0.5 peer-focus:text-blue-600 peer-focus:text-sm peer-focus:translate-y-0"
             >
-                {name}
+                {label}
             </label>
         </div>
     )

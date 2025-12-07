@@ -16,6 +16,7 @@ type Inputs = {
 
 export default function LoginPage() {
     const t = useTranslations("common");
+    const t_form = useTranslations("form");
     const {
         register,
         handleSubmit,
@@ -34,9 +35,9 @@ export default function LoginPage() {
             <h1 className="text-2xl font-bold text-black">{t("login")}</h1>
             <div className="flex flex-col gap-4">
                 {errors.email && <Alert message="El campo correo es requerido" status={Status.error} />}
-                <Input register={register} name="email" type="email" />
+                <Input register={register} name="email" type="email" label={t_form("register.email")} />
                 {errors.password && <Alert message="El campo contraseña es requerido" status={Status.error} />}
-                <Input register={register} name="password" type="password" />
+                <Input register={register} name="password" type="password" label={t_form("register.password")} />
             </div>
 
             <input type="submit" className="bg-blue-500 text-white p-2 rounded mt-auto" />

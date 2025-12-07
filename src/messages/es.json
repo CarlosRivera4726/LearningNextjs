@@ -4,5 +4,26 @@
         "dashboard": "Dashboard",
         "login": "Iniciar sesión",
         "register": "Registrarse"
+    },
+    "form": {
+        "register": {
+            "title": "Registrarse",
+            "name": "Nombre",
+            "email": "Email",
+            "password": "Contraseña",
+            "confirmPassword": "Confirmar contraseña",
+            "register": "Registrarse"
+        },
+        "alerts": {
+            "success": "Exito",
+            "error": "Error",
+            "warning": "Advertencia",
+            "info": "Información",
+            "namerequired": "El campo nombre es requerido",
+            "emailrequired": "El campo email es requerido",
+            "passwordrequired": "El campo contraseña es requerido",
+            "confirmPasswordrequired": "El campo confirmar contraseña es requerido",
+            "confirmPasswordmatch": "Las contraseñas no coinciden"
+        }
     }
 }

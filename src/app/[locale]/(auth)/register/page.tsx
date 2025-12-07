@@ -20,6 +20,7 @@ type Inputs = {
 
 export default function RegisterPage() {
     const t = useTranslations("common");
+    const t_form = useTranslations("form");
     const [alert, setAlert] = useState({ message: "", status: Status.success })
     const {
         register,
@@ -56,17 +57,17 @@ export default function RegisterPage() {
             <h1 className="text-2xl font-bold text-black">{t("register")}</h1>
             {alert.message && <Alert message={alert.message} status={alert.status} />}
             <div className="flex flex-col gap-4">
-                {errors.name && <Alert message="El campo nombre es requerido" status={Status.error} />}
-                <Input register={register} name="name" type="text" />
-                {errors.email && <Alert message="El campo correo es requerido" status={Status.error} />}
-                <Input register={register} name="email" type="email" />
-                {errors.password && <Alert message="El campo contraseña es requerido" status={Status.error} />}
-                <Input register={register} name="password" type="password" />
-                {errors.confirmPassword && <Alert message="El campo confirmar contraseña es requerido" status={Status.error} />}
-                <Input register={register} name="confirmPassword" type="password" />
+                {errors.name && <Alert message={t_form("alerts.namerequired")} status={Status.error} />}
+                <Input register={register} name="name" type="text" label={t_form("register.name")} />
+                {errors.email && <Alert message={t_form("alerts.emailrequired")} status={Status.error} />}
+                <Input register={register} name="email" type="email" label={t_form("register.email")} />
+                {errors.password && <Alert message={t_form("alerts.passwordrequired")} status={Status.error} />}
+                <Input register={register} name="password" type="password" label={t_form("register.password")} />
+                {errors.confirmPassword && <Alert message={t_form("alerts.confirmPasswordrequired")} status={Status.error} />}
+                <Input register={register} name="confirmPassword" type="password" label={t_form("register.confirmPassword")} />
             </div>
 
-            <input type="submit" className="bg-blue-500 text-white p-2 rounded mt-auto" />
+            <input type="submit" className="bg-blue-500 text-white p-2 rounded mt-auto" value={t_form("register.title")} />
         </Form>
     );
 }
