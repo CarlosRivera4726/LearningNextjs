@@ -68,7 +68,7 @@ export default function RegisterPage() {
                 <Input register={register} name="confirmPassword" type="password" label={t_form("register.confirmPassword")} />
             </div>
 
-            <Button type="submit" color="primary" value={t_form("register.title")} />
+            <Button type="submit" color="primary" value={t_form("register.title")} loading={false} />
 
 
         </Form>

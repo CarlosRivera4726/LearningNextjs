@@ -155,7 +155,7 @@ const Button = ({
                 ${className}
                 group
                 cursor-pointer
-                p-3
+                p-2
             `}
             disabled={disabled || loading}
             {...props}
@@ -188,7 +188,6 @@ const Button = ({
             {variant === 'solid' && !disabled && (
                 <span className="
                     absolute inset-0
-                    bg-gradient-to-r from-white/0 via-white/20 to-white/0
                     -translate-x-full
                     group-hover:translate-x-full
                     transition-transform duration-1000
