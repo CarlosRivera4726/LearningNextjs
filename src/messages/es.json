@@ -1,3 +1,8 @@
 {
-    "hello": "hola"
+    "common": {
+        "home": "Inicio",
+        "dashboard": "Dashboard",
+        "login": "Iniciar sesión",
+        "register": "Registrarse"
+    }
 }

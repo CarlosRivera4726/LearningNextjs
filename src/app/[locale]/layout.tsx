@@ -1,7 +1,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/nav/Nav";
+import Nav from "@/app/components/nav/Nav";
 import { NextIntlClientProvider } from "next-intl";
 import { routing } from '@/i18n/routing';
 

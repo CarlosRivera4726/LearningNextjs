@@ -1,4 +1,4 @@
-import { Status } from "@/src/enums/Status.enum";
+import { Status } from "@/app/enums/Status.enum";
 
 interface AlertProps {
     message: string;

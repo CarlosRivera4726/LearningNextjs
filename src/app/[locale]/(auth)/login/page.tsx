@@ -1,9 +1,9 @@
 "use client"
 
-import Alert from "@/src/components/Alert/Alert";
-import Form from "@/src/components/Form/Form";
-import Input from "@/src/components/Input/Input";
-import { Status } from "@/src/enums/Status.enum";
+import Alert from "@/app/components/Alert/Alert";
+import Form from "@/app/components/Form/Form";
+import Input from "@/app/components/Input/Input";
+import { Status } from "@/app/enums/Status.enum";
 import { useForm, SubmitHandler } from "react-hook-form"
 
 

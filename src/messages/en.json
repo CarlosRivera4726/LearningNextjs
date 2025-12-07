@@ -1,1 +1,8 @@
-{}
+{
+    "common": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "login": "Login",
+        "register": "Register"
+    }
+}
